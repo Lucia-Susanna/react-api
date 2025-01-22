@@ -27,32 +27,36 @@ const Main = () => {
 
   return (
     <main>
-      <div className="container">
-        <h3 className="my-3 text-center">
-          Ricette salvate
-        </h3>
-        <div className="d-flex flex-wrap">
-
+      <div className="bg-success-subtle">
+        <div className="container py-5">
+          <h1 className="text-center">
+            Ricette salvate
+          </h1>
           {postsList.map(post => (
-
-            <div className="col-12 col-md-4">
-              <div className="card p-3">
-                <img src={post.image} alt="" />
-                <h5>
-                  {post.title}
-                </h5>
-                <p>
-                  {post.content}
-                </p>
-                <p>
-                  {post.tags.join(', ')}
-                </p>
+            <div className="card my-4">
+              <div className="p-3 m-3 d-lg-flex align-items-center">
+                <img className="col-12 col-lg-6 col-xl-4 me-lg-3" src="https://picsum.photos/400/400" alt={post.title} />
+                <div className="col-12 col-lg-6 col-xl-8">
+                  <h3 className="my-3">
+                    {post.title}
+                  </h3>
+                  <div>
+                    <h5>Descrizione:</h5>
+                    <p>
+                      {post.content}
+                    </p>
+                  </div>
+                  <div>
+                    <h5>Tags:</h5>
+                    <p>
+                      {post.tags.join(', ')}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-
           ))}
-
         </div>
       </div>
 
